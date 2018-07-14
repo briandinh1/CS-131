@@ -1,0 +1,47 @@
+Brian Dinh
+LAB 1
+Pseudo code
+Design A
+
+
+
+struct philosopher(void *id) {...}
+
+C = number of courses // 3
+courseNum = current course num
+
+pthread_t p[N]
+pthread_mutex_t fork[N]
+pthread_mutex_t lock
+
+void eat(void *id)
+{
+	if (courseNum >= C) done
+	
+	frontFork = id
+	rightFork = id+1 % N
+
+	pthread_mutex_lock(&fork[frontFork])
+	pthread_mutex_lock(&fork[rightFork])
+	
+	sleep(1)
+
+	pthread_mutex_unlock(&fork[frontFork])
+	pthread_mutex_unlock(&fork[rightFork])	
+}
+
+int main()
+{
+	int N = getline(...)
+	
+	for (N)
+		pthread_mutex_init(&fork ... )
+
+	for (N) 
+		pthread_create(&p, eat, philosopher, ...)
+		sleep(1);
+	
+	pthread_join(...)
+
+	return 0;
+}

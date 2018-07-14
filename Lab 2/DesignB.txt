@@ -1,0 +1,40 @@
+Brian Dinh
+LAB 2
+Pseudo code
+Design B
+
+
+
+
+
+main
+	MPI_init, comm size, comm rank
+
+	If (B1)
+		myOp = MPI_Op_create (count(given chunk size))
+		MPI_reduce(myOp,...)
+		see which word had the highest number in output array
+		return word
+
+	If (B2)
+		if (rank != 0)
+			MPI_recv(..., rank-1, ...)
+			count(given chunk size)
+		
+		MPI_send(..., rank, ...)
+		
+		if (rank == 0)
+			MPI_recv(..., rank-1, ...)
+			see which word had the highest number in output array
+			return word
+		
+
+
+count()
+	for a given array chunk, count words
+	save count to output array, used in main
+	
+
+
+
+

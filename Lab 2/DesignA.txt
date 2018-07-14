@@ -1,0 +1,19 @@
+Brian Dinh
+LAB 2
+Pseudo code
+Design A
+
+
+
+
+main
+	MPI_init, comm size, comm rank
+	compute first chunk with main
+	MPI_scatter the rest of the image, compute_chunk
+	MPI_gather back computed values
+	finalize
+
+compute_chunk
+	use a queue to keep track of chunks
+	pop off when chunk is taken to be computed
+	while (chunk not empty) run sobel

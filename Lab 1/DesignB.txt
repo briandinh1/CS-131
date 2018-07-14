@@ -1,0 +1,40 @@
+Brian Dinh
+LAB 1
+Pseudo code
+Design B
+
+
+
+void sorel(int* image)
+{
+	// run provided sorel algorithm
+	// 2d array is passed as the parameter
+}
+
+int main
+{
+	int N = number of threads to use, tbd
+	thread T[N-1]
+
+	input = getline(...)
+	output = getline(...)
+
+	for (...)
+		input = translate image to 2d array
+		output = input
+
+	maskX = [ -1 0 1; -2 0 2; -1 0 1 ]
+	maskY = [ 1 2 1; 0 0 0; -1 -2 -1]
+
+	for (i < N - 1)
+		T[i] = thread(sorel,output,...)
+
+	for (N-1 to N)
+		sorel(output,...)
+	
+	for (...) join threads
+
+	output = do something with output image
+
+	return 0
+}
